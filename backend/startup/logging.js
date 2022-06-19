@@ -7,14 +7,14 @@ winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 
 //handling uncaught exceptions
 process.on('uncaughtException', (ex) => {
-    console.log("Exception found!");
+    console.log("Exception found1!");
     winston.log('error', ex.message, ex);
     process.exit(1);
 });
 
 //handling uncaught rejected promises
 process.on('unhandledRejection', (ex) => {
-    console.log("Exception found!");
+    console.log("Exception found2!");
     winston.log('error', ex.message, ex);
     process.exit(1);
 });

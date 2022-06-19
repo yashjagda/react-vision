@@ -1,7 +1,19 @@
-.wrapper {
-  background: #3d464d;
-  height : 100 vh;
+/*                                 GENERAL CSS                                   */
+
+body {
+  background-color: #000000;
+  color:#f1f1f1
 }
+
+a {
+  color: #384748;
+  text-decoration: none;
+}
+
+.main-content{
+  margin-top: 50px;
+}
+
 body::-webkit-scrollbar {
   width: 0.5em; /* width of the entire scrollbar */
 }
@@ -15,6 +27,94 @@ body::-webkit-scrollbar-thumb {
   /* roundness of the scroll thumb */
   /* creates padding around scroll thumb */
 }
+
+/*                                 GENERAL CSS                                   */
+
+/*                                 NAVBAR CSS                                   */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ) !important; /* Give transparent white background to navbar */
+  /* 0.2 to give little whitish effect. */
+  /* Put 0 to get complete transperency */
+  z-index: 2;
+  backdrop-filter: blur(10px) saturate(125%); /* Blur the background */
+  /* 10px Gaussian Blur and saturate for fluent design */
+  -webkit-backdrop-filter: blur(10px) saturate(125%); /* Increases browser compability (safari ios and mac) */
+}
+
+.list {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2) !important; /* Give transparent white background to navbar */
+  /* 0.2 to give little whitish effect. */
+  /* Put 0 to get complete transperency */
+  z-index: 999;
+  backdrop-filter: blur(10px) saturate(125%); /* Blur the background */
+  /* 10px Gaussian Blur and saturate for fluent design */
+  -webkit-backdrop-filter: blur(10px) saturate(125%); /* Increases browser compability (safari ios and mac) */
+}
+.items {
+  margin-right: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  padding: 5px;
+  color: #000;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 700px) {
+  .list {
+    flex-direction: column;
+    margin-top: 50px;
+    height: auto;
+  }
+  .items:nth-child(1) {
+    border-top: 1px solid rgba(255, 255, 255, 0.555);
+    margin-top: 50px;
+  }
+  .items {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.555);
+    text-align: center;
+    margin-right: 0px;
+    padding: 20px 0;
+  }
+  .btn, .btn:hover {
+    display: block;
+    color:#f1f1f1
+  }
+}
+
+/*                                 NAVBAR CSS                                   */
+
+/*                                 AUTH CSS                                   */
+
+.wrapper {
+  background: #3d464d;
+  height: 100 vh;
+}
+
 /*
     * Card component
     */
@@ -47,7 +147,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 50%;
 }
 
-
 .profile-name-card {
   font-size: 16px;
   font-weight: bold;
@@ -78,9 +177,9 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
 }
 
-.form-signin input[type="email"],
-.form-signin input[type="password"],
-.form-signin input[type="text"],
+.form-signin input[type='email'],
+.form-signin input[type='password'],
+.form-signin input[type='text'],
 .form-signin button {
   width: 100%;
   display: block;
@@ -133,3 +232,5 @@ body::-webkit-scrollbar-thumb {
 .forgot-password:focus {
   color: rgb(12, 97, 33);
 }
+
+/*                                 AUTH CSS                                   */
